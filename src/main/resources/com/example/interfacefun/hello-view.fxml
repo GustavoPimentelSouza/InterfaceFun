@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.interfacefun.controller.FuncionarioController">
+
+  <top>
+    <Label text="Funcionários" style="-fx-font-size: 20px; -fx-font-weight: bold;"
+           BorderPane.alignment="CENTER"/>
+  </top>
+
+  <center>
+    <HBox spacing="20">
+      <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+      </padding>
+
+      <!-- Dados Pessoais -->
+      <VBox spacing="10.0">
+        <TitledPane text="Dados Pessoais" expanded="true">
+          <GridPane hgap="10.0" vgap="10.0">
+            <padding>
+              <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+            <Label text="Matrícula:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="matriculaField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Nome:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="nomeField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="CPF:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="cpfField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Data de Nascimento:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dataNascimentoPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Cargo:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="cargoField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Salário:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="salarioField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Data de Contratação:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dataContratacaoPicker" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+          </GridPane>
+        </TitledPane>
+      </VBox>
+
+      <!-- Endereço -->
+      <VBox spacing="10.0">
+        <TitledPane text="Endereço" expanded="true">
+          <GridPane hgap="10.0" vgap="10.0">
+            <padding>
+              <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+
+            <Label text="Logradouro:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="logradouroField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Número:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="numeroField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Complemento:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="complementoField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Bairro:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="bairroField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Cidade:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="cidadeField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Estado:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="estadoField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="CEP:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="cepField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+          </GridPane>
+        </TitledPane>
+      </VBox>
+    </HBox>
+  </center>
+
+  <bottom>
+    <VBox spacing="10.0">
+      <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+      </padding>
+
+      <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Cadastrar" onAction="#onCadastrar"/>
+        <Button text="Excluir" onAction="#onExcluir"/>
+        <Button text="Consultar" onAction="#onConsultar"/>
+        <Button text="Listar Todos" onAction="#onListarTodos"/>
+      </HBox>
+
+      <TableView fx:id="tabelaFuncionarios" prefHeight="200.0">
+        <columns>
+          <TableColumn text="Matrícula" fx:id="colMatricula"/>
+          <TableColumn text="Nome" fx:id="colNome"/>
+          <TableColumn text="CPF" fx:id="colCpf"/>
+          <TableColumn text="Cargo" fx:id="colCargo"/>
+          <TableColumn text="Salário" fx:id="colSalario"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </bottom>
+
+</BorderPane>
