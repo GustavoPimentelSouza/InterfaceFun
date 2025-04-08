@@ -105,6 +105,17 @@
           <TableColumn text="Salário" fx:id="colSalario"/>
         </columns>
       </TableView>
+
+      <!-- Campos e Botões de Relatórios -->
+      <HBox spacing="10.0" alignment="CENTER">
+        <Label text="Salário Mínimo:"/>
+        <TextField fx:id="salarioMinField" prefWidth="80"/>
+        <Label text="Salário Máximo:"/>
+        <TextField fx:id="salarioMaxField" prefWidth="80"/>
+
+        <Button text="Filtrar por Cargo" onAction="#onFiltrarPorCargo"/>
+        <Button text="Filtrar por Salário" onAction="#onFiltrarPorSalario"/>
+      </HBox>
     </VBox>
   </bottom>
 
